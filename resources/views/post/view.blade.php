@@ -28,8 +28,8 @@
                                     <td>{{ $item['isi'] }}</td>
                                     <td>{{ $item['tanggal'] }}</td>
                                     <td>{{ $item->kategori->nama }}</td>
-                                    <td><a href="{{ url('post/' . $item->id . '/edit') }}"class="btn btn-primary">Edit</a>
-                                        <a href="{{ url('post/' . $item->id . '/delete') }}"class="btn btn-secondary">Delete</a>
+                                    <td><a href="{{ url('post/' . $item->id . '/edit') }}"class="btn btn-primary mb-2">Edit</a>
+                                        <a href="{{ url('post/' . $item->id . '/delete') }}"class="btn btn-secondary mb-2">Delete</a>
                                     </td>
                                 </tr>
                             @endforeach

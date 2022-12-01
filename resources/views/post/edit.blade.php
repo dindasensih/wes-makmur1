@@ -32,6 +32,7 @@
                                 @endforeach
                                 </select>
                             </div>
+                            <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                         </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>

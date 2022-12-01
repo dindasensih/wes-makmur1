@@ -25,7 +25,6 @@
                                         <option selected value="" disabled>Pilih Role</option>
                                         <option value="admin">Admin</option>
                                         <option value="editor">Editor</option>
-                                        <option value="editor">User</option>
                                     </select>
                                 </div>
                             <div class="form-group mb-3">

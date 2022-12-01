@@ -27,7 +27,6 @@
                                         <option selected value="" disabled>Pilih Role</option>
                                         <option value="admin" @if('admin' == $data->role) @selected($data->role== 'admin') @endif>Admin</option>
                                         <option value="editor" @if('editor' == $data->role) @selected($data->role== 'editor') @endif>Editor</option>
-                                        <option value="user" @if('user' == $data->role) @selected($data->role== 'user') @endif>User</option>
                                     </select>
                                 </div>
                             <div class="form-group mb-3">

@@ -11,7 +11,18 @@
                             @csrf
                             <div class="mb-3">
                                 <label class="form-label">Keluhan</label>
-                                <input type="text" class="form-control" name="keluhan">
+                                <select class="form-control" name="keluhan">
+                                    <option selected value="" disabled>Pilih Keluhan</option>
+                                    <option value="keseleo">Keseleo</option>
+                                    <option value="kurang nafsu makan">Kurang Nafsu Makan</option>
+                                    <option value="pegal-pegal">Pegal-pegal</option>
+                                    <option value="darah tinggi">Darah Tinggi</option>
+                                    <option value="gula darah">Gula Darah</option>
+                                    <option value="kram perut">Kram Perut</option>
+                                    <option value="masuk angin">Masuk Angin</option>
+                                </select>
+
+
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Tahun Lahir</label>

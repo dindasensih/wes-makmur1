@@ -7,6 +7,7 @@ use App\Http\Controllers\RekomenController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,8 @@ Route::get('/template', function () {
 });
 
 Route::get('dashboard', [PostController::class, 'dashboard']);
+
+Route::get('detail/{id}', [PostController::class, 'detail']);
 
 Route::resource('kategori', KategoriController::class);
 Route::get('kategori/{kategori}/delete', [KategoriController::class, 'destroy']);

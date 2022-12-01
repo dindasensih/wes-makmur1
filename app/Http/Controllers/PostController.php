@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Kategori;
 use App\Models\Post;
+use App\Models\Produk;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -92,11 +93,10 @@ class PostController extends Controller
         $data = Post::find($id);
         $validator = $request->validate([
             'judul' => 'required|string',
-            'isi' => 'required|string',
+            'isi' => 'required',
             'tanggal' => 'required|string',
-            'user_id' => 'required|string',
-            'tanggal' => 'required|string',
-            
+            'user_id' => 'required',
+            'kategori_id' => 'required',
 
         ]);
         $data->update($validator);
@@ -120,5 +120,12 @@ class PostController extends Controller
     {
         $data = Post::all();
         return view('dashboard', compact('data'));
+    }
+
+    public function detail($id)
+    {
+        $data = Post::findOrFail($id);
+        $produk = Produk::where('kategori_id', $data->kategori_id)->get();
+        return view('detail', compact('data', 'produk'));
     }
 }

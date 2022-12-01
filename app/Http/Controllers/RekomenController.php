@@ -34,7 +34,7 @@ class RekomenController extends Controller
      */
     public function store(Request $request)
     {
-        $a = new saran($request->berat, $request->tinggi, $request->tahun);
+        $a = new saran($request->keluhan, $request->tahun);
         $data = [
             'nama_jamu' => $a->namajamu(),
             'khasiat' => $a->khasiat(),
@@ -93,10 +93,10 @@ class RekomenController extends Controller
 }
 
 class Jamu{
-    public function __construct($keluhan, $umur)
+    public function __construct($keluhan, $tahun)
     {
         $this->keluhan=$keluhan;
-        $this->umur=$umur;
+        $this->tahun=$tahun;
     }
     public function namajamu()
     {
@@ -120,7 +120,7 @@ class Jamu{
     }
     public function hitungUmur()
     {
-        return 2022 - $this->umur;
+        return 2022 - $this->tahun;
     }
     public function khasiat()
     {
@@ -150,9 +150,9 @@ class saran extends Jamu{
     public function rekom2()
     {
         if ($this->keluhan == "keseleo" ){
-            return "dioleskan";
+            return "Dioleskan";
         }else{
-            return "dikonsumsi";
+            return "Dikonsumsi";
         }
     }
 }
